@@ -1,0 +1,13 @@
+h2{
+    color: indigo;
+    border : 3px solid black;
+    border-radius: 10px;
+}
+
+.diana{
+    color: pink;
+    background-color: darkslategray;
+}
+.notDiana{
+   background-color: silver;
+}
