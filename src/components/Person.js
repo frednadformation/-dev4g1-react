@@ -1,5 +1,5 @@
 import React from 'react'
-import './person.css'
+// import './person.css'
 
 function Person({person, color1}) {
   // let colorDiana = person.name == "Diana" ? "diana" : "notDiana"
