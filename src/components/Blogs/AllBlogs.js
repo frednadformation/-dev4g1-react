@@ -41,7 +41,9 @@ function AllBlogs() {
     const [state, dispatch] = useReducer(reducer, initialState)
 
     useEffect(() => {
-        axios.get("http://localhost:5000/allblogs")
+        // axios.get("http://localhost:5000/allblogs")
+        //Grace au proxy :
+        axios.get("/allblogs")
             .then(response => {
                 dispatch({ type: 'FETCH_SUCCESS', payload: response.data });
             })

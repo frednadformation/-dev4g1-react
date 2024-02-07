@@ -21,7 +21,9 @@ function OneBlog() {
 
   useEffect(()=>{
     // axios.get('http://localhost:5000/blog/' + params.id)
-    axios.get(`http://localhost:5000/blog/${params.id}`)
+    // axios.get(`http://localhost:5000/blog/${params.id}`)
+    //Grace au proxy :
+    axios.get(`/blog/${params.id}`)
     .then(response =>{
       setLoading(false)
       console.log(response.data);

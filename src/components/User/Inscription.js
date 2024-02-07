@@ -1,6 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Inscription() {
+  const [password, setPassword] = useState('')
+  const [message, setMessage] = useState('')
+
+  function handleChange(e){
+    setPassword(e.target.value)
+    
+    const regExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$/
+
+    const isValidPassword = regExp.test(password)
+
+    if(isValidPassword) {
+      setMessage("password is valid")
+    }
+    else{
+      setMessage("Invalid password")
+    }
+  }
+
   return (
     <div>
         <h1>Page inscription</h1>
@@ -13,7 +31,8 @@ function Inscription() {
             <input type="email" name="email" />
             <br/>
             <label>Password</label>
-            <input type="password" name="password" />
+            <input type="password" name="password" onChange={handleChange}/>
+            <p>{message}</p>
             <br/>
             Type d'utilisateur :
             <label for="administrateur">Admin</label>
